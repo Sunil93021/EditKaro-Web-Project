@@ -36,6 +36,7 @@ try {
         switch ($_POST['form-type']){
             case 'contact':
                 $subject = 'A message from your site visitor';
+                console.log("in contact call");
                 break;
             case 'subscribe':
                 $subject = 'Subscribe request';
