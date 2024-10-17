@@ -2,6 +2,135 @@
 /*
 * Trunk version 2.0.1
 */
+
+
+/*
+* Pricing 
+*/
+.cards{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.pricing-card{
+	display: flex;
+	flex-direction: column;
+	height: 400px;
+	width: 300px;
+	margin-bottom: 50px;
+	margin-left: 20px;
+	justify-content: space-between;
+	box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+	border-radius: 5px;
+	opacity: 0.7;
+}
+
+.card-header{
+	height: 50px;
+	background-color:#6200ea;
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.card-body{
+	padding-top: 60px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: large;
+	padding-left: 30px;
+}
+
+.price-button{
+	padding-inline: 30px;
+	padding-block: 10px;
+	border-radius: 6px;
+	background-color: #111dff;
+	color:white;
+	font-weight: bold;
+	width: fit-content;
+	align-self: center;
+	margin-bottom: 20px;
+}
+.price-button:hover{
+	background-color:  #151a91;
+}
+.pricing-card:hover{
+	transform: scale(1.05);
+	box-shadow: 0 4px 15px rgb(0, 0, 0,0.8);
+	border: 1px solid blue;
+	transition: transform 0.4s, box-shadow 0.5s,opacity 0.3s;
+	opacity: 1;
+}
+
+/*
+* why we're Different
+*/
+.we-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 50px 20px;
+	text-align: center;
+  }
+.section-title {
+	font-size: 2.5em;
+	margin-bottom: 40px;
+	color: #6200ea;
+  }
+
+  .reasons {
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
+	flex-wrap: wrap;
+  }
+
+  .reason-card {
+	background-color: white;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	flex: 1;
+	transition: transform 0.3s ease;
+  }
+
+  .reason-card:hover {
+	transform: translateY(-10px);
+  }
+
+  .reason-icon {
+	font-size: 3em;
+	color: #6200ea;
+	margin-bottom: 20px;
+  }
+
+  .reason-title {
+	font-size: 1.5em;
+	margin-bottom: 15px;
+	color: #333;
+	font-weight: bold;
+  }
+
+  .reason-description {
+	font-size: 1em;
+	color: #666;
+	line-height: 1.6;
+  }
+  
+  @media (max-width:888px) {
+	.reasons{
+		flex-direction: column;
+		width: 100%;
+	}
+	.reason-card{
+		width: 100%;
+	}
+  }
+
 /*
 * Contexts
 */
@@ -44,6 +173,8 @@ label {
 p {
 	margin: 0;
 }
+
+
 
 ul,
 ol {
