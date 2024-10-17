@@ -2,6 +2,87 @@
 /*
 * Trunk version 2.0.1
 */
+/* 
+* protfolio 
+*/
+.video-section {
+    border : 2px solid black;
+    margin: 20px 40px;
+    background-color:#E6E0FA;
+    border-radius: 5px;
+    transition: transform 0.6s ;
+}
+
+.video-section:hover {
+    transform: scale(1.05);
+}
+
+
+.portfolio {
+    padding: 20px;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.video-container img{
+	width: 300px;
+	height: 200px;
+	margin: 20px;
+	border-radius: 10px;
+    transition: border-color 0.3s ease-in-out,transform 0.6s;
+	border: 2px solid black;
+}
+iframe {
+    width: 1000px;
+	height: 500px;
+    margin: 10px;
+    border-radius: 8px;
+
+}
+.video-container img:hover{
+    border-color: #FFD700;
+    transform: scale(1.05);
+}
+
+.nav-video ul {
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+	flex-direction: row;
+	background-color: #73a4ac;
+	width: 100%;
+	justify-content: space-around;
+} 
+#video-section{
+	background-color: #e3e6e7;
+}
+.nav-video ul li {
+    margin: 0px 15px;
+	padding: 5px;
+}
+.nav-video a:hover{
+    text-decoration: underline;
+    
+} 
+.nav-video{
+	width: 100%;
+}
+.nav-video a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .video-container img {
+        width: 100%;
+    }
+	iframe{
+		width: 100%;
+	}
+}
 
 /* 
 *	Press and media page

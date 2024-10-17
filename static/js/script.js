@@ -1,4 +1,5 @@
 "use strict";
+
 (function () {
 	// Global variables
 	var userAgent = navigator.userAgent.toLowerCase(),
