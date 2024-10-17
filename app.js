@@ -6,6 +6,8 @@ const port = process.env.PORT;
 
 const app = express();
 
+const emailTxt = ""
+
 app.use(express.static(path.join(__dirname,'static')));
 app.use(express.urlencoded({extended: true}));
 
@@ -22,7 +24,7 @@ app.post("/sendMail", async (req, res) => {
     const mailOptions = {
         to: "skaibalya748@gmail.com",
         subject: "Hello",
-        text: "Thanks for visting us",
+        text: "Thanks for visting us"
     }
 
     try{
