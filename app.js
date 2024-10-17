@@ -2,6 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 require('dotenv').config();
 const path = require("path");
+const port = process.env.PORT;
 
 const app = express();
 
@@ -10,7 +11,6 @@ app.use(express.urlencoded({extended: true}));
 
 app.post("/sendMail", async (req, res) => {
     let {email} = req.body;
-    console.log(email);
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -29,15 +29,11 @@ app.post("/sendMail", async (req, res) => {
         await transporter.sendMail(mailOptions);
         res.redirect("/");
     }catch(e){
-        console.log(e)
-        res.send("error occured")
+        console.log(e);
+        res.send("error occured");
     }
 })
 
-app.get("/home", (req, res) => {
-    res.send("Wokring");
-});
-
-app.listen(8080, () => {
-    console.log("App is listening on port 8080");
+app.listen(port, () => {
+    console.log("App is listening on port ",port);
 });
