@@ -24,11 +24,17 @@ app.post("/sendMail", async (req, res) => {
     const mailOptions = {
         to: "skaibalya748@gmail.com",
         subject: "Hello",
-        text: "Thanks for visting us"
+        text: "Thanks for visting us",
+        attachment: [
+            {
+                filename: "test.pdf",
+                path: path.join(__dirname,"pdfs" ,"test.pdf")
+            }
+        ]
     }
 
     try{
-        await transporter.sendMail(mailOptions);
+        let info = await transporter.sendMail(mailOptions);
         res.redirect("/");
     }catch(e){
         console.log(e);
