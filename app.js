@@ -36,6 +36,6 @@ app.post("/sendMail", async (req, res) => {
     }
 })
 
-app.listen(port, () => {
-    console.log("App is listening on port ",port);
+app.listen(8080, () => {
+    console.log("App is listening on port ",8080);
 });
