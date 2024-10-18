@@ -2,4 +2,3 @@ bat
 node_modules
 .env
 test
-credentials.json
