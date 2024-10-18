@@ -5,13 +5,21 @@ const path = require("path");
 const port = process.env.PORT;
 let {google} = require("googleapis"); 
 const fs = require("fs");
+const os = require('os');
+
+
+const tmpDir = os.tmpdir();
+const tmpFilePath = `${tmpDir}/credentials.json`;
 
 const app = express();
 
 
-// Decode the Base64-encoded credentials from the environment variable
-const credentials = Buffer.from(process.env.GOOGLECREDENTIALS, 'base64').toString('utf-8');
-fs.writeFileSync('credentials.json', credentials);
+if (!fs.existsSync(tmpFilePath)) {
+    // Decode and write the credentials only if the file doesn't exist
+    const credentials = Buffer.from(process.env.GOOGLECREDENTIALS, 'base64').toString('utf-8');
+    fs.writeFileSync(tmpFilePath, credentials);
+  }
+  
 
 const emailText = `Hello There,
 
@@ -48,7 +56,7 @@ const transporter = nodemailer.createTransport({
 //Googlesheets setup
 const sheets = google.sheets('v4');
 const auth = new google.auth.GoogleAuth({
-    keyFile: 'credentials.json',
+    keyFile: tmpFilePath,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
   
