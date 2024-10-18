@@ -18,7 +18,7 @@ As part of our commitment to driving growth and expanding business opportunities
 2. **Market Expansion** - Identifying new customer segments and potential regions for expansion.
 3. **Customer Retention** - Implementing strategies that boost loyalty and reduce churn.
 
-I've attached a PDF with more detailed information and strategic recommendations. Please feel free to review it at your convenience. I’m looking forward to discussing these ideas in more depth and exploring how we can implement them to accelerate growth for [Company Name].
+I've attached a PDF with more detailed information and strategic recommendations. Please feel free to review it at your convenience. I’m looking forward to discussing these ideas in more depth and exploring how we can implement them to accelerate growth.
 
 Thank you, and I look forward to your feedback!
 
@@ -30,6 +30,15 @@ someone@gmail.com
 app.use(express.static(path.join(__dirname,'static')));
 app.use(express.urlencoded({extended: true}));
 
+// Nodemailer setup
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: "skaibalya2005@gmail.com",
+        pass: process.env.NODEMAILERPASS
+    }
+});
+
 //Googlesheets setup
 const sheets = google.sheets('v4');
 const auth = new google.auth.GoogleAuth({
@@ -38,24 +47,15 @@ const auth = new google.auth.GoogleAuth({
   });
   
 
+
+// sending mail to the user
 app.post("/sendMail", async (req, res) => {
     let {email} = req.body;
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: "skaibalya2005@gmail.com",
-            pass: process.env.NODEMAILERPASS
-        }
-    });
 
     const mailOptions = {
-<<<<<<< HEAD
         from: "skaibalya2005@gmail.com",
-=======
-        from: "skaibalya748@gmail.com",
->>>>>>> 46a626ca66e9bd0c81a100c1f8ca1b605b928245
         to: email,
-        subject: "Hello",
+        subject: "Thanks for visiting us",
         text: emailText,
         attachments: [
             {
@@ -100,11 +100,6 @@ app.post("/saveUser", async(req, res) => {
     }
 });
 
-<<<<<<< HEAD
 app.listen(port, () => {
     console.log(`App is listening on http://localhost:${port}`);
-=======
-app.listen(8080, () => {
-    console.log("App is listening on port ",8080);
->>>>>>> 46a626ca66e9bd0c81a100c1f8ca1b605b928245
 });
