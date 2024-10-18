@@ -83,6 +83,8 @@ app.post("/sendMail", async (req, res) => {
         let info = await transporter.sendMail(mailOptions);
         res.redirect("/");
     }catch(e){
+        console.log("Error occured while sending mail: ",e);
+        req.send("Some error occured");
     }
 });
 

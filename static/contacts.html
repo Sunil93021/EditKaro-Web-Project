@@ -58,7 +58,7 @@
                   <p>Call Now</p><a href="tel:+18005550148">+1-800-555-0148</a>
                 </div>
               </div>
-              <div class="rd-navbar-element"><a class="button button-sm button-default-outline button-winona" href="#">Get a Quote</a>
+              <div class="rd-navbar-element"><a class="button button-sm button-default-outline button-winona" href="contacts.html#get-in-touch">Get a Quote</a>
               </div>
               <div class="rd-navbar-dummy"></div>
             </div>
@@ -220,5 +220,18 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([51.505, -0.09], 13); // Coordinates for London
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        L.marker([51.5, -0.09]).addTo(map)
+            .bindPopup()
+            .openPopup();
+    </script>
   </body>
 </html>
