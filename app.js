@@ -32,12 +32,12 @@ app.use(express.urlencoded({extended: true}));
 
 // Nodemailer setup
 const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: "skaibalya2005@gmail.com",
-        pass: process.env.NODEMAILERPASS
-    }
-});
+        service: "gmail",
+        auth: {
+            user: "skaibalya2005@gmail.com",
+            pass: process.env.NODEMAILERPASS
+        }
+    });
 
 //Googlesheets setup
 const sheets = google.sheets('v4');
