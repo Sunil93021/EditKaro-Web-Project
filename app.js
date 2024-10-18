@@ -81,7 +81,7 @@ app.post("/saveUser", async(req, res) => {
         const spreadsheetId = "1gKNf0YiWTPTxvOByqhbIFR-nkxeU6dCFQIkZXjqbEqY";
         const range = 'Sheet1!A:D';
     
-        sheets.spreadsheets.values.append({
+        await sheets.spreadsheets.values.append({
             auth: client,
             spreadsheetId,
             range,
@@ -90,9 +90,6 @@ app.post("/saveUser", async(req, res) => {
                 values: [[username, email, phone, msg]],
               },
         })
-        .then(() => console.log("Information added on spreadsheet"))
-        .catch(e => console.error("Error adding data, ",e))
-    
         res.status(200).redirect("/contacts.html");
     }catch(err){
         console.error("Error writing to google sheets: ", err);
