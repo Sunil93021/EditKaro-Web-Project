@@ -4,8 +4,14 @@ require('dotenv').config();
 const path = require("path");
 const port = process.env.PORT;
 let {google} = require("googleapis"); 
+const fs = require("fs");
 
 const app = express();
+
+
+// Decode the Base64-encoded credentials from the environment variable
+const credentials = Buffer.from(process.env.GOOGLECREDENTIALS, 'base64').toString('utf-8');
+fs.writeFileSync('credentials.json', credentials);
 
 const emailText = `Hello There,
 
