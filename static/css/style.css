@@ -2,6 +2,87 @@
 /*
 * Trunk version 2.0.1
 */
+/* 
+* protfolio 
+*/
+.video-section {
+    border : 2px solid black;
+    margin: 20px 40px;
+    background-color:#E6E0FA;
+    border-radius: 5px;
+    transition: transform 0.6s ;
+}
+
+.video-section:hover {
+    transform: scale(1.05);
+}
+
+
+.portfolio {
+    padding: 20px;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.video-container img{
+	width: 300px;
+	height: 200px;
+	margin: 20px;
+	border-radius: 10px;
+    transition: border-color 0.3s ease-in-out,transform 0.6s;
+	border: 2px solid black;
+}
+iframe {
+    width: 1000px;
+	height: 500px;
+    margin: 10px;
+    border-radius: 8px;
+
+}
+.video-container img:hover{
+    border-color: #FFD700;
+    transform: scale(1.05);
+}
+
+.nav-video ul {
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+	flex-direction: row;
+	background-color: #73a4ac;
+	width: 100%;
+	justify-content: space-around;
+} 
+#video-section{
+	background-color: #e3e6e7;
+}
+.nav-video ul li {
+    margin: 0px 15px;
+	padding: 5px;
+}
+.nav-video a:hover{
+    text-decoration: underline;
+    
+} 
+.nav-video{
+	width: 100%;
+}
+.nav-video a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .video-container img {
+        width: 100%;
+    }
+	iframe{
+		width: 100%;
+	}
+}
 
 /* 
 *	Press and media page
@@ -305,58 +386,6 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .heading
 	color: #3061ff;
 }
 
-h1,
-.heading-1 {
-	font-size: 34px;
-	font-weight: 800;
-	line-height: 1.5;
-	letter-spacing: .025em;
-}
-
-@media (min-width: 768px) {
-	h1,
-	.heading-1 {
-		font-size: 44px;
-	}
-}
-
-@media (min-width: 1200px) {
-	h1,
-	.heading-1 {
-		font-size: 65px;
-		line-height: 1.07692;
-	}
-}
-
-h2,
-.heading-2 {
-	font-size: 28px;
-	line-height: 1.35;
-	letter-spacing: 0;
-}
-
-@media (min-width: 768px) {
-	h2,
-	.heading-2 {
-		font-size: 40px;
-	}
-}
-
-@media (min-width: 1200px) {
-	h2,
-	.heading-2 {
-		font-size: 44px;
-	}
-}
-
-@media (min-width: 1600px) {
-	h2,
-	.heading-2 {
-		font-size: 48px;
-		line-height: 1.20833;
-	}
-}
-
 h3,
 .heading-3 {
 	font-size: 22px;
@@ -476,6 +505,186 @@ h6,
 	}
 }
 
+/* ############################################ */
+/*                     Services                     */
+/* ############################################ */
+#Services {
+	padding-block: var(--size-5);
+	background-color: var(--primary-color-3);
+	max-width: 1200px; /* Restrict the width of the Services section */
+	margin: 0 auto; /* Center the Services section */
+  }
+  
+  .blog__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* Ensure three columns */
+	gap: 2rem;
+	max-height: 600px; /* Restrict the height of the grid */
+	overflow-y: auto; /* Add scroll if content exceeds max height */
+  }
+  
+  .article {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	box-shadow: var(--box-1);
+	padding: 1rem;
+	border-radius: 12px;
+	transition: 0.5s linear 0.2s;
+	max-width: 100%; /* Ensure articles do not exceed the grid width */
+	max-height: 100%; /* Ensure articles do not exceed the grid height */
+  }
+  
+  .article:hover {
+	box-shadow: var(--box-2);
+  }
+  
+  .article h2 {
+	font-weight: 700;
+	text-transform: capitalize;
+	font-size: var(--font-p);
+	color: var(--text-color-lightbg);
+  }
+  
+  .article p {
+	font-size: 14px;
+	max-width: 90%;
+	color: var(--text-color-lightbg);
+  }
+  
+  .blog__btn {
+	display: flex;
+	width: fit-content;
+	font-size: 14px;
+	padding: 0.5rem 1rem;
+	align-items: center;
+  }
+
+  /* Imp for services.html */
+  /* ############################################ */
+/*                  1.CSS RESET                 */
+/* ############################################ */
+/* Service Card */
+#Services {
+	padding-block: var(--size-5);
+	background-color: var(--primary-color-3);
+	max-width: 1200px; /* Restrict the width of the Services section */
+	margin: 0 auto; /* Center the Services section */
+  }
+  
+  .blog__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* Ensure three columns on larger screens */
+	gap: 2rem; /* Space between grid items */
+  }
+  
+  @media (max-width: 768px) {
+	.blog__grid {
+	  grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.blog__grid {
+	  grid-template-columns: 1fr; /* One column on smaller screens */
+	}
+  }
+  
+  .video-card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 1rem;
+	border-radius: 12px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	background-color: #fff;
+	max-width: 100%; /* Ensure cards do not exceed the grid width */
+	height: 420px; /* Set a fixed height for the cards */
+  }
+  
+  .video-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .video-container {
+	width: 100%;
+	height: 60%; /* Adjust height to fit within the card */
+	border-radius: 12px;
+	overflow: hidden;
+  }
+  
+  .video-container video {
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+  }
+  
+  .content {
+	text-align: center;
+	height: 40%; /* Adjust height to fit within the card */
+  }
+  
+  .video-title {
+	font-size: 1.5rem;
+	color: #333;
+	margin: 0;
+  }
+  
+  .video-description {
+	font-size: 1rem;
+	color: #666;
+  }
+
+  /* video card above */
+
+
+  /* FAQ Section */
+#faq {
+	padding: 50px 0;
+	background-color: #f9f9f9;
+  }
+  
+  #faq .wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+  }
+  
+  #faq .faq__title {
+	text-align: center;
+	margin-bottom: 30px;
+  }
+  
+  #faq .faq__title h2 {
+	font-size: 2.5em;
+	margin-bottom: 10px;
+  }
+  
+  #faq .faq__content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+  }
+  
+  #faq .faq__item {
+	background: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #faq .faq__item h3 {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+  }
+  
+  #faq .faq__item p {
+	font-size: 1em;
+	color: #555;
+  }
+  /* FAQ  */
 .text-extra-large {
 	font-family: Poppins, sans-serif;
 	font-size: 88px;
@@ -5527,21 +5736,21 @@ section.breadcrumbs-custom + section {
 }
 
 /*
-* Pagination custom
+* pageination custom
 */
-.pagination {
+.pageination {
 	font-size: 0;
 	line-height: 0;
 	margin-bottom: -10px;
 	margin-left: -10px;
 }
 
-.pagination:empty {
+.pageination:empty {
 	margin-bottom: 0;
 	margin-left: 0;
 }
 
-.pagination > * {
+.pageination > * {
 	display: inline-block;
 	margin-top: 0;
 	margin-bottom: 10px;
@@ -8156,7 +8365,7 @@ h5.iphone-frame-4-next-text {
 }
 
 /*
-* Page layout
+* page layout
 */
 .page {
 	position: relative;
@@ -12810,7 +13019,7 @@ html.rd-navbar-fixed-linked .page {
 	content: "\f060";
 }
 
-.swiper-pagination {
+.swiper-pageination {
 	position: absolute;
 	display: block;
 	text-align: center;
@@ -12819,11 +13028,11 @@ html.rd-navbar-fixed-linked .page {
 	z-index: 10;
 }
 
-.swiper-pagination.swiper-pagination-hidden {
+.swiper-pageination.swiper-pageination-hidden {
 	opacity: 0;
 }
 
-.swiper-pagination .swiper-pagination-bullet {
+.swiper-pageination .swiper-pageination-bullet {
 	width: 10px;
 	height: 10px;
 	display: inline-block;
@@ -12832,40 +13041,40 @@ html.rd-navbar-fixed-linked .page {
 	transition: .2s;
 }
 
-.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .swiper-pagination .swiper-pagination-bullet:hover {
+.swiper-pageination .swiper-pageination-bullet.swiper-pageination-bullet-active, .swiper-pageination .swiper-pageination-bullet:hover {
 	background: white;
 }
 
-.swiper-pagination.swiper-pagination-clickable .swiper-pagination-bullet {
+.swiper-pageination.swiper-pageination-clickable .swiper-pageination-bullet {
 	cursor: pointer;
 }
 
-.swiper-pagination-black .swiper-pagination-bullet {
+.swiper-pageination-black .swiper-pageination-bullet {
 	background: rgba(0, 0, 0, 0.6);
 }
 
-.swiper-pagination-black .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-pageination-black .swiper-pageination-bullet.swiper-pageination-bullet-active {
 	background: black;
 }
 
-.swiper-container-vertical > .swiper-pagination {
+.swiper-container-vertical > .swiper-pageination {
 	right: 10px;
 	top: 50%;
 	transform: translate3d(0px, -50%, 0);
 }
 
-.swiper-container-vertical > .swiper-pagination .swiper-pagination-bullet {
+.swiper-container-vertical > .swiper-pageination .swiper-pageination-bullet {
 	margin: 5px 0;
 	display: block;
 }
 
-.swiper-container-horizontal > .swiper-pagination {
+.swiper-container-horizontal > .swiper-pageination {
 	bottom: 20px;
 	left: 0;
 	width: 100%;
 }
 
-.swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+.swiper-container-horizontal > .swiper-pageination .swiper-pageination-bullet {
 	margin: 0 5px;
 }
 
@@ -15571,7 +15780,7 @@ html.rd-navbar-fixed-linked .page {
 }
 
 /*
- * Owl Pagination
+ * Owl pageination
  */
 .owl-dots {
 	text-align: center;

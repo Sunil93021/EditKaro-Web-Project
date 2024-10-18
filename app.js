@@ -49,7 +49,11 @@ app.post("/sendMail", async (req, res) => {
     });
 
     const mailOptions = {
+<<<<<<< HEAD
         from: "skaibalya2005@gmail.com",
+=======
+        from: "skaibalya748@gmail.com",
+>>>>>>> 46a626ca66e9bd0c81a100c1f8ca1b605b928245
         to: email,
         subject: "Hello",
         text: emailText,
@@ -96,6 +100,11 @@ app.post("/saveUser", async(req, res) => {
     }
 });
 
+<<<<<<< HEAD
 app.listen(port, () => {
     console.log(`App is listening on http://localhost:${port}`);
+=======
+app.listen(8080, () => {
+    console.log("App is listening on port ",8080);
+>>>>>>> 46a626ca66e9bd0c81a100c1f8ca1b605b928245
 });
