@@ -2,7 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 require('dotenv').config();
 const path = require("path");
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 let {google} = require("googleapis"); 
 const fs = require("fs");
 const os = require('os');
@@ -113,6 +113,6 @@ app.post("/saveUser", async(req, res) => {
     }
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0",() => {
     console.log(`App is listening on http://localhost:${port}`);
 });
